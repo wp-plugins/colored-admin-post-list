@@ -4,7 +4,7 @@
   Plugin URI: http://www.eracer.de/custom_post_type_feed
   Description: Highlights the background of draft, pending, future, private and published posts in the wordpress admin
   Author: Stevie
-  Version: 0.5 Beta
+  Version: 1.0
   Author URI: http://www.eracer.de
  */
 
