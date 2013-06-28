@@ -1,7 +1,7 @@
 <?php
 /*
   Plugin Name: Colored Admin Post List
-  Plugin URI: http://www.eracer.de/
+  Plugin URI: http://wordpress.org/plugins/colored-admin-post-list/
   Description: Highlights the background of draft, pending, future, private and published posts in the wordpress admin
   Author: Stevie
   Version: 1.0
