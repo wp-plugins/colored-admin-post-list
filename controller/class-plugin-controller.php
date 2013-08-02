@@ -7,6 +7,8 @@ class CAPL_PluginController {
     public function __construct() {
         $this->settings_controller = new CAPL_SettingsController();
 
+        //new CAPL_DashboardWidgetController();
+        
         if ($this->is_enabled()) {
             add_action('admin_footer-edit.php', array(&$this, "action_admin_footer"));
         }
