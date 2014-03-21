@@ -30,7 +30,7 @@ Yes
 2. Options
 
 == Changelog ==
-**Version 1.2**
+**Version 1.3**
 
 Tested with WordPress 3.8.1 (Works!)
 
