@@ -1,7 +1,11 @@
 <?php
-    if(isset($_POST["capl-submit-reset"])):
-        CAPL_SettingsController::reset_colors();
-    endif;
+if (!empty($_SERVER['SCRIPT_FILENAME']) && basename(__FILE__) == basename($_SERVER['SCRIPT_FILENAME'])):
+    die('Please do not load this screen directly. Thanks!');
+endif;
+
+if (isset($_POST["capl-submit-reset"])):
+    CAPL_SettingsController::reset_colors();
+endif;
 ?>
 
 <div class="wrap">
@@ -15,8 +19,8 @@
         <?php submit_button(); ?>
     </form>
 
-   <form method="post" action="<?php echo $_SERVER["PHP_SELF"] ?>?page=capl_admin_options" id="capl-form-reset-to-defaults">
-       <?php submit_button(__("Reset Settings", CAPL_Constants::TEXT_DOMAIN), "delete", "capl-submit-reset", true, array("id" => "capl-button-reset-to-defaults", "data-message" => __("Are you sure?", CAPL_Constants::TEXT_DOMAIN))); ?>
+    <form method="post" action="<?php echo $_SERVER["PHP_SELF"] ?>?page=capl_admin_options" id="capl-form-reset-to-defaults">
+        <?php submit_button(__("Reset Settings", CAPL_Constants::TEXT_DOMAIN), "delete", "capl-submit-reset", true, array("id" => "capl-button-reset-to-defaults", "data-message" => __("Are you sure?", CAPL_Constants::TEXT_DOMAIN))); ?>
 
     </form>
 

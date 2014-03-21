@@ -9,18 +9,10 @@ class CAPL_SettingsController {
         add_action('admin_print_scripts-posts_page_' . CAPL_Constants::ADMIN_PAGE_OPTIONS, array(&$this, "action_admin_print_scripts"));
 
         add_filter("plugin_action_links_" . CAPL_PLUGIN, array($this, 'filter_plugin_action_links'));
-        add_action('admin_notices', array(&$this, "action_admin_notices"));
-    }
-
-    public function action_admin_notices() {
-        settings_errors(CAPL_Constants::SETTINGS_ERRORS);
     }
 
     public function action_admin_menu() {
-
-
-        add_posts_page("Colored Post List", "Colored Post List", 10, CAPL_Constants::ADMIN_PAGE_OPTIONS, array(&$this, "view_settings"));
-        add_options_page("Colored Post List", "Colored Post List", 10, CAPL_Constants::ADMIN_PAGE_OPTIONS, array(&$this, "view_settings"));
+        add_options_page("Colored Post List", "Colored Post List", "manage_options", CAPL_Constants::ADMIN_PAGE_OPTIONS, array(&$this, "view_settings"));
     }
 
     public function action_admin_print_scripts() {

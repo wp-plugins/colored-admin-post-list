@@ -3,8 +3,8 @@ Contributors: rockschtar
 Donate link: http://www.eracer.de/donation
 Tags: wp-admin, admin, color, colored, post, list
 Requires at least: 3.5
-Tested up to: 3.6
-Stable tag: 1.1
+Tested up to: 3.8.1
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,14 @@ Yes
 2. Options
 
 == Changelog ==
+**Version 1.2**
+
+Tested with WordPress 3.8.1 (Works!)
+
+**Version 1.2**
+
+Minor Bug-Fixes
+
 **Version 1.1**
 
 Compatible with Wordpress 3.6
