@@ -32,6 +32,10 @@ Yes
 == Changelog ==
 **Version 1.2**
 
+Tested with WordPress 3.8.1 (Works!)
+
+**Version 1.2**
+
 Minor Bug-Fixes
 
 **Version 1.1**
