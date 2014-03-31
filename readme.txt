@@ -1,6 +1,6 @@
 === Colored Admin Post List ===
 Contributors: rockschtar
-Donate link: http://www.eracer.de/donation
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B2WSC5FR2L8MU
 Tags: wp-admin, admin, color, colored, post, list
 Requires at least: 3.5
 Tested up to: 3.8.1
