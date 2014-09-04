@@ -8,7 +8,7 @@ class CAPL_PluginController {
         $this->settings_controller = new CAPL_SettingsController();
 
         //new CAPL_DashboardWidgetController();
-        
+
         if ($this->is_enabled()) {
             add_action('admin_footer-edit.php', array(&$this, "action_admin_footer"));
         }
@@ -90,9 +90,8 @@ class CAPL_PluginController {
         endif;
 
         $background_color = $option;
-
-        $style = "." . $css_class . "{ background: " . $background_color .
-                $style .= (($important == true) ? " !important" : "") . "; }\r\n";
+        $style = "";
+        $style = "." . $css_class . "{ background: " . $background_color . $style .= (($important == true) ? " !important" : "") . "; }\r\n";
         return $style;
     }
 
