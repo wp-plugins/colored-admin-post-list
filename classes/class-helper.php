@@ -29,6 +29,25 @@ class CAPL_Helper {
         return false;
     }
 
+    public static function get_customs_post_statuses() {
+        $post_stati = get_post_stati($post_stati = array(), "objects");
+        $default_post_stati = array("publish", "pending", "future", "private", "draft");
+        $custom_post_statuses = array();
+
+        foreach ($post_stati as $post_status):
+
+            if ($post_status->show_in_admin_status_list === false || in_array($post_status->name, $default_post_stati)):
+                continue;
+            endif;
+
+            $handle = "capl-color-" . $post_status->name;
+            $custom_post_statuses[$post_status->name] = array("option_handle" => $handle, "label" => $post_status->label, "name" => $post_status->name);
+
+        endforeach;
+        ksort($custom_post_statuses);
+        return $custom_post_statuses;
+    }
+
 }
 
 ?>

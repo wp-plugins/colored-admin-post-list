@@ -67,22 +67,25 @@ class CAPL_PluginController {
     }
 
     public function action_admin_footer() {
+        $custom_post_statuses = CAPL_Helper::get_customs_post_statuses();
         ?>
-        <style>
+        <style type="text/css">
         <?php
         echo $this->style_builder("status-publish", CAPL_Constants::SETTING_COLOR_PUBLISH);
         echo $this->style_builder("status-draft", CAPL_Constants::SETTING_COLOR_DRAFTS);
         echo $this->style_builder("status-pending", CAPL_Constants::SETTING_COLOR_PENDING);
         echo $this->style_builder("status-future", CAPL_Constants::SETTING_COLOR_FUTURE);
         echo $this->style_builder("status-private", CAPL_Constants::SETTING_COLOR_PRIVATE);
-        ?>
 
+        foreach ($custom_post_statuses as $custom_post_status):
+            echo $this->style_builder("status-" . $custom_post_status["name"], $custom_post_status["option_handle"]);
+        endforeach;
+        ?>
         </style>
         <?php
     }
 
     private function style_builder($css_class, $option, $important = true) {
-
         $option = get_option($option);
 
         if ($option === false || empty($option)):

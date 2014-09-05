@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: wp-admin, admin, color, colored, post, list
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 1.5
+Stable tag: 1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,7 +30,12 @@ Yes
 2. Options
 
 == Changelog ==
+**Version 1.7**
+
+Added support for custom post statuses (like from edit-flow plugin)
+
 **Version 1.4**
+
 Tested with WordPress 4.0 (Works!)
 
 **Version 1.3**
