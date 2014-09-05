@@ -120,6 +120,14 @@ class CAPL_SettingsController {
         delete_option(CAPL_Constants::SETTING_COLOR_PRIVATE);
         delete_option(CAPL_Constants::SETTING_COLOR_PENDING);
         delete_option(CAPL_Constants::SETTING_COLOR_FUTURE);
+
+
+        $custom_post_statuses = CAPL_Helper::get_customs_post_statuses();
+
+        foreach ($custom_post_statuses as $custom_post_status):
+            $handle = $custom_post_status["option_handle"];
+            delete_option($handle);
+        endforeach;
     }
 
     public function view_settings() {
