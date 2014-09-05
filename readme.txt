@@ -8,7 +8,7 @@ Stable tag: 1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Highlights the background of draft, pending, future, private and published posts in the wordpress admin
+Highlights the background of draft, pending, future, private, and published posts in the wordpress admin. Also supports custom post statues!
 
 == Description ==
 
