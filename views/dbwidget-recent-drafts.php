@@ -10,9 +10,9 @@ $posts = get_posts($args);
 
 
 
-$background_color_draft = get_option(CAPL_Constants::SETTING_COLOR_DRAFTS);
-$background_color_pending = get_option(CAPL_Constants::SETTING_COLOR_PENDING);
-$background_color_future = get_option(CAPL_Constants::SETTING_COLOR_FUTURE);
+$background_color_draft = get_option(CAPL_Constants::DEPRECATED_SETTING_COLOR_DRAFTS);
+$background_color_pending = get_option(CAPL_Constants::DEPRECATED_SETTING_COLOR_PENDING);
+$background_color_future = get_option(CAPL_Constants::DEPRECATED_SETTING_COLOR_FUTURE);
 ?>
 <ul>
 <?php foreach ($posts as $post): ?>
