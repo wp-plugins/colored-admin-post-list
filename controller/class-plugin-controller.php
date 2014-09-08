@@ -73,6 +73,7 @@ class CAPL_PluginController {
         delete_option(CAPL_Constants::DEPRECATED_SETTING_COLOR_PENDING);
         delete_option(CAPL_Constants::DEPRECATED_SETTING_COLOR_PRIVATE);
         delete_option(CAPL_Constants::SETTING_ENABLED);
+        delete_option("capl-one-time-upgrade");
     }
 
     public function action_admin_footer() {
