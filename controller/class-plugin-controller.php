@@ -88,8 +88,6 @@ class CAPL_PluginController {
 
         $custom_post_statuses = CAPL_Helper::get_post_statuses_custom();
 
-        ;
-
         foreach ($custom_post_statuses as $custom_post_status):
             echo $this->style_builder("status-" . $custom_post_status["name"], $custom_post_status["option_handle"]);
         endforeach;

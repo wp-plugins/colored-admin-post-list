@@ -27,10 +27,10 @@ class CAPL_SettingsController {
     }
 
     public function register_settings() {
-        add_settings_section(CAPL_Constants::SETTINGS_SECTION_DEFAULT, __("Settings", CAPL_Constants::TEXT_DOMAIN), array(&$this, "settings_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT);
-        add_settings_section(CAPL_Constants::SETTINGS_SECTION_COLORS, __("Colors", CAPL_Constants::TEXT_DOMAIN), array(&$this, "settings_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT);
-        add_settings_section(CAPL_Constants::SETTINGS_SECTION_CUSTOM_POST_STATI, __("Custom Post Statuses", CAPL_Constants::TEXT_DOMAIN), array(&$this, "settings_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT);
-        add_settings_field(CAPL_Constants::SETTING_ENABLED, __("Enabled", CAPL_Constants::TEXT_DOMAIN), array(&$this, "setting_enabled_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT, CAPL_Constants::SETTINGS_SECTION_DEFAULT);
+        add_settings_section(CAPL_Constants::SETTINGS_SECTION_GENERAL, __("General", CAPL_Constants::TEXT_DOMAIN), array(&$this, "settings_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT);
+        add_settings_section(CAPL_Constants::SETTINGS_SECTION_COLORS_DEFAULT, __("Default Post Statuses", CAPL_Constants::TEXT_DOMAIN), array(&$this, "settings_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT);
+
+        add_settings_field(CAPL_Constants::SETTING_ENABLED, __("Enabled", CAPL_Constants::TEXT_DOMAIN), array(&$this, "setting_enabled_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT, CAPL_Constants::SETTINGS_SECTION_GENERAL);
 
         $default_post_statuses = CAPL_Helper::get_post_statuses_default();
 
@@ -39,7 +39,7 @@ class CAPL_SettingsController {
             $args = array(
                 'handle' => $handle
             );
-            add_settings_field($handle, __($custom_post_status["label"]), array(&$this, "setting_callback_color"), CAPL_Constants::SETTINGS_PAGE_DEFAULT, CAPL_Constants::SETTINGS_SECTION_COLORS, $args);
+            add_settings_field($handle, __($custom_post_status["label"]), array(&$this, "setting_callback_color"), CAPL_Constants::SETTINGS_PAGE_DEFAULT, CAPL_Constants::SETTINGS_SECTION_COLORS_DEFAULT, $args);
             register_setting(CAPL_Constants::SETTINGS_PAGE_DEFAULT, $handle, array(&$this, "setting_validate_color"));
         endforeach;
 
@@ -50,13 +50,17 @@ class CAPL_SettingsController {
             $args = array(
                 'handle' => $handle
             );
-            add_settings_field($handle, __($custom_post_status["label"]), array(&$this, "setting_callback_color"), CAPL_Constants::SETTINGS_PAGE_DEFAULT, CAPL_Constants::SETTINGS_SECTION_CUSTOM_POST_STATI, $args);
+            add_settings_field($handle, __($custom_post_status["label"]), array(&$this, "setting_callback_color"), CAPL_Constants::SETTINGS_PAGE_DEFAULT, CAPL_Constants::SETTINGS_SECTION_COLORS_CUSTOM, $args);
             register_setting(CAPL_Constants::SETTINGS_PAGE_DEFAULT, $handle, array(&$this, "setting_validate_color"));
         endforeach;
+
+        if (sizeof($custom_post_statuses) > 0):
+            add_settings_section(CAPL_Constants::SETTINGS_SECTION_COLORS_CUSTOM, __("Custom Post Statuses", CAPL_Constants::TEXT_DOMAIN), array(&$this, "settings_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT);
+        endif;
     }
 
     public function settings_callback() {
-
+       
     }
 
     public function setting_enabled_validate($input) {
@@ -70,7 +74,8 @@ class CAPL_SettingsController {
 
     public function setting_callback_color(array $args) {
         $handle = $args["handle"];
-        $this->input_field_color($handle);
+        $setting = get_option($handle);
+        echo '<input class="capl-wp-color-picker" type="text" id="' . $handle . '" class="regular-text" name="' . $handle . '" value="' . $setting . '" />';
     }
 
     public function setting_validate_color($input) {
@@ -85,6 +90,7 @@ class CAPL_SettingsController {
     }
 
     public static function reset_colors() {
+        //deprecated
         delete_option(CAPL_Constants::DEPRECATED_SETTING_COLOR_DRAFTS);
         delete_option(CAPL_Constants::DEPRECATED_SETTING_COLOR_PUBLISH);
         delete_option(CAPL_Constants::DEPRECATED_SETTING_COLOR_PRIVATE);
@@ -104,18 +110,15 @@ class CAPL_SettingsController {
             $handle = $custom_post_status["option_handle"];
             delete_option($handle);
         endforeach;
+
+        update_option("capl-color-publish", CAPL_Constants::DEFAULT_COLOR_PUBLISH);
+        update_option("capl-color-draft", CAPL_Constants::DEFAULT_COLOR_DRAFTS);
+        update_option("capl-color-pending", CAPL_Constants::DEFAULT_COLOR_PENDING);
+        update_option("capl-color-future", CAPL_Constants::DEFAULT_COLOR_FUTURE);
+        update_option("capl-color-private", CAPL_Constants::DEFAULT_COLOR_PRIVATE);
     }
 
     public function view_settings() {
         include(CAPL_PLUGIN_DIR . "/views/settings.php");
     }
-
-    private function input_field_color($setting_name) {
-        //$setting = get_option($setting_name, $default);
-        $setting = get_option($setting_name);
-        echo '<input class="capl-wp-color-picker" type="text" id="' . $setting_name . '" class="regular-text" name="' . $setting_name . '" value="' . $setting . '" />';
-    }
-
 }
-
-?>

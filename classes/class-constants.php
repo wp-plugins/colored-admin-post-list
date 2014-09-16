@@ -12,9 +12,9 @@ class CAPL_Constants {
     const DEFAULT_COLOR_PRIVATE = "#F2D46F";
     const DEFAULT_COLOR_PUBLISH = "transparent";
     const SETTINGS_ERRORS = "capl_settings_errors";
-    const SETTINGS_SECTION_DEFAULT = "capl_settings_section_default";
-    const SETTINGS_SECTION_COLORS = "capl_settings_section_colors";
-    const SETTINGS_SECTION_CUSTOM_POST_STATI = "capl_settings_section_custom_post_stati";
+    const SETTINGS_SECTION_GENERAL = "capl_settings_section_default";
+    const SETTINGS_SECTION_COLORS_DEFAULT = "capl_settings_section_colors";
+    const SETTINGS_SECTION_COLORS_CUSTOM = "capl_settings_section_custom_post_stati";
     const SETTINGS_SECTION_RESET = "capl_settings_section_reset";
     const SETTINGS_PAGE_DEFAULT = "capl_settings_page_default";
     const SETTINGS_PAGE_RESET = "capl_settings_page_reset";
