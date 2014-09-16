@@ -31,14 +31,6 @@ class CAPL_Helper {
         return self::get_post_statuses(array(), $default_post_stati);
     }
 
-    public static function get_script_url($filename) {
-        if (WP_DEBUG === true):
-            return CAPL_PLUGIN_URL . "scripts/" . $filename;
-        else:
-            return CAPL_PLUGIN_URL . "scripts/" . str_replace(".js", ".min.js", $filename);
-        endif;
-    }
-
     private static function get_post_statuses($include = array(), $exclude = array()) {
         $post_stati = get_post_stati($post_stati = array(), "objects");
 

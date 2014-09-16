@@ -17,7 +17,7 @@ class CAPL_SettingsController {
     public function action_admin_print_scripts() {
         wp_enqueue_style("wp-color-picker");
         wp_enqueue_script("wp-color-picker");
-        wp_enqueue_script("capl-settings", CAPL_Helper::get_script_url("settings.js"), array("jquery", "wp-color-picker"));
+        wp_enqueue_script("capl-settings", CAPL_PLUGIN_URL . "scripts/settings.js", array("jquery", "wp-color-picker"));
     }
 
     public function filter_plugin_action_links($links) {
