@@ -21,16 +21,16 @@ class CAPL_SettingsController {
     }
 
     public function filter_plugin_action_links($links) {
-        $settings_link = '<a href="options-general.php?page=' . CAPL_Constants::ADMIN_PAGE_OPTIONS . '">' . __("Settings", CAPL_Constants::TEXT_DOMAIN) . '</a>';
+        $settings_link = '<a href="options-general.php?page=' . CAPL_Constants::ADMIN_PAGE_OPTIONS . '">' . __("Settings", "colored-admin-post-list") . '</a>';
         array_unshift($links, $settings_link);
         return $links;
     }
 
     public function register_settings() {
-        add_settings_section(CAPL_Constants::SETTINGS_SECTION_GENERAL, __("General", CAPL_Constants::TEXT_DOMAIN), array(&$this, "settings_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT);
-        add_settings_section(CAPL_Constants::SETTINGS_SECTION_COLORS_DEFAULT, __("Default Post Statuses", CAPL_Constants::TEXT_DOMAIN), array(&$this, "settings_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT);
+        add_settings_section(CAPL_Constants::SETTINGS_SECTION_GENERAL, __("General", "colored-admin-post-list"), array(&$this, "settings_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT);
+        add_settings_section(CAPL_Constants::SETTINGS_SECTION_COLORS_DEFAULT, __("Default Post Statuses", "colored-admin-post-list"), array(&$this, "settings_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT);
 
-        add_settings_field(CAPL_Constants::SETTING_ENABLED, __("Enabled", CAPL_Constants::TEXT_DOMAIN), array(&$this, "setting_enabled_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT, CAPL_Constants::SETTINGS_SECTION_GENERAL);
+        add_settings_field(CAPL_Constants::SETTING_ENABLED, __("Enabled", "colored-admin-post-list"), array(&$this, "setting_enabled_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT, CAPL_Constants::SETTINGS_SECTION_GENERAL);
 
         $default_post_statuses = CAPL_Helper::get_post_statuses_default();
 
@@ -55,7 +55,7 @@ class CAPL_SettingsController {
         endforeach;
 
         if (sizeof($custom_post_statuses) > 0):
-            add_settings_section(CAPL_Constants::SETTINGS_SECTION_COLORS_CUSTOM, __("Custom Post Statuses", CAPL_Constants::TEXT_DOMAIN), array(&$this, "settings_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT);
+            add_settings_section(CAPL_Constants::SETTINGS_SECTION_COLORS_CUSTOM, __("Custom Post Statuses", "colored-admin-post-list"), array(&$this, "settings_callback"), CAPL_Constants::SETTINGS_PAGE_DEFAULT);
         endif;
     }
 
@@ -82,7 +82,7 @@ class CAPL_SettingsController {
         $valid = filter_var($input, FILTER_SANITIZE_STRING);
 
         if (!empty($valid) && CAPL_Helper::validate_html_color($valid) == false):
-            add_settings_error(CAPL_Constants::SETTINGS_ERRORS, 666, __("Invalid Color", CAPL_Constants::TEXT_DOMAIN), "error");
+            add_settings_error(CAPL_Constants::SETTINGS_ERRORS, 666, __("Invalid Color", "colored-admin-post-list"), "error");
             return false;
         endif;
 

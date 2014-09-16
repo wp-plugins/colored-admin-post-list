@@ -36,7 +36,7 @@ class CAPL_Helper {
 
         $custom_post_statuses = array();
 
-
+       
 
         foreach ($post_stati as $post_status):
 

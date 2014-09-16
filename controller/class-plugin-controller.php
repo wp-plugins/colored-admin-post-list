@@ -9,6 +9,9 @@ class CAPL_PluginController {
         register_deactivation_hook(CAPL_PLUGIN_FILE, array("$class_name", "on_deactivation"));
         register_uninstall_hook(CAPL_PLUGIN_FILE, array("$class_name", "on_uninstall"));
 
+        
+          
+        
         add_action("init", array(&$this, "init"));
 
         if ($this->is_enabled()):
@@ -19,6 +22,9 @@ class CAPL_PluginController {
     }
 
     public function init() {
+        
+        load_plugin_textdomain("colored-admin-post-list", true, CAPL_PLUGIN_RELATIVE_DIR . '/languages/');
+        
         $onetime_upgrade = get_option("capl-one-time-upgrade");
 
         if ($onetime_upgrade === false):
