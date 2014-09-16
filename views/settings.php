@@ -10,7 +10,7 @@ endif;
 
 <div class="wrap">
     <div id="icon-themes" class="icon32"><br></div>
-    <h2><?php echo __("Colored Admin Post List Options", "colored-admin-post-list") ?></h2>
+    <h2><?php echo __("Colored Admin Post List Settings", "colored-admin-post-list") ?></h2>
     <form method="post" action="options.php">
         <?php settings_fields(CAPL_Constants::SETTINGS_PAGE_DEFAULT); ?>
         <?php do_settings_sections(CAPL_Constants::SETTINGS_PAGE_DEFAULT); ?>

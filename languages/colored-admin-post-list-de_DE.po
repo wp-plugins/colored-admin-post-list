@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Colored Admin Post List\n"
-"POT-Creation-Date: 2014-09-16 22:10+0100\n"
-"PO-Revision-Date: 2014-09-16 22:15+0100\n"
+"POT-Creation-Date: 2014-09-16 22:24+0100\n"
+"PO-Revision-Date: 2014-09-16 22:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -47,8 +47,8 @@ msgid "Invalid Color"
 msgstr "Ungültige Farbe"
 
 #: views/settings.php:13
-msgid "Colored Admin Post List Options"
-msgstr "Colored Admin Post List Optionen"
+msgid "Colored Admin Post List Settings"
+msgstr "Colored Admin Post List Einstellungen"
 
 #: views/settings.php:21
 msgid "Reset Settings"
