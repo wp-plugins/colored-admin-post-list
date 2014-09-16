@@ -30,7 +30,7 @@ Yes
 2. Options
 
 == Changelog ==
-**Version 1.7**
+**Version 2.0**
 
 Refactor/Rewrite of core plugin functionality
 
