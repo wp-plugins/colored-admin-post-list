@@ -32,6 +32,10 @@ Yes
 == Changelog ==
 **Version 1.7**
 
+Refactor/Rewrite of core plugin functionality
+
+**Version 1.7**
+
 Added support for custom post statuses (like from edit-flow plugin)
 
 **Version 1.4**
