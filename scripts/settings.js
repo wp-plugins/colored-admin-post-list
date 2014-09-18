@@ -7,5 +7,5 @@ jQuery(document).ready(function($) {
             return true;
         }
         return false;
-    });
+    });   
 });
