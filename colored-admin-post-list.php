@@ -19,7 +19,6 @@ define("CAPL_VERSION", 2.0);
 
 require_once(CAPL_PLUGIN_DIR . "classes/class-constants.php");
 require_once(CAPL_PLUGIN_DIR . "classes/class-helper.php");
-
 require_once(CAPL_PLUGIN_DIR . "controller/class-plugin-controller.php");
 require_once(CAPL_PLUGIN_DIR . "controller/class-settings-controller.php");
 require_once(CAPL_PLUGIN_DIR . "controller/class-dashboard-widget-controller.php");
