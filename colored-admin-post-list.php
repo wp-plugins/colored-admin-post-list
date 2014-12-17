@@ -6,7 +6,7 @@ Plugin URI: http://wordpress.org/plugins/colored-admin-post-list/
 Description: Highlights the background of draft, pending, future, private, and published posts in the wordpress admin. Also supports custom post statues!
 Author: Stevie
 Author URI: http://www.eracer.de
-Version: 2.0
+Version: 2.01
  */
 
 define("CAPL_PLUGIN", plugin_basename(__FILE__));

@@ -3,7 +3,7 @@ Contributors: rockschtar
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=B2WSC5FR2L8MU
 Tags: wp-admin, admin, color, colored, post, list, highlight
 Requires at least: 3.5
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,6 +30,10 @@ Yes
 2. Options
 
 == Changelog ==
+**Version 2.01**
+
+Tested with WordPress 4.1 (Works!)
+
 **Version 2.0**
 
 Refactor/Rewrite of core plugin functionality
