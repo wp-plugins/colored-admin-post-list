@@ -10,8 +10,7 @@ class CAPL_PluginController {
         register_uninstall_hook(CAPL_PLUGIN_FILE, array("$class_name", "on_uninstall"));
 
         
-          
-        
+                
         add_action("init", array(&$this, "init"));
 
         if ($this->is_enabled()):
@@ -121,4 +120,3 @@ class CAPL_PluginController {
     }
 
 }
-?>

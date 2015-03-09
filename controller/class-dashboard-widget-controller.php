@@ -1,15 +1,5 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of class-dashboard-widget-controller
- *
- * @author Stevie
- */
 class CAPL_DashboardWidgetController {
 
     function __construct() {
@@ -25,7 +15,4 @@ class CAPL_DashboardWidgetController {
         require_once(CAPL_PLUGIN_DIR . "/views/dbwidget-recent-drafts.php");
         
     }
-
 }
-
-?>
